@@ -1,8 +1,7 @@
 
 
 
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.Matchers.is;
+
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -27,29 +26,6 @@ public class SpyTest {
         map.put(1, "test");
 
         //thennn rkulgolgui
-        assertThat(map.get(1), is("test"));
+
     }
-
-    @Test
-    public void testSpyMapKeySetDefaultBehavior() {
-        //when
-        map.put(1, "test1");
-        map.put(2, "test2");
-
-        //then
-        assertThat(map.keySet(), containsInAnyOrder(1, 2));
-    }
-
-    @Test
-    public void testSpyMapValuesWithDefinedBehavior() {
-        Collection<String> stub = Arrays.asList("test1", "test2", "test3");
-        when(map.values()).thenReturn(stub);
-
-        //when
-        map.put(1, "test");
-
-        //then
-        assertThat(map.values(), is(stub));
-    }
-
 }
